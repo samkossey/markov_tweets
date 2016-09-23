@@ -36,7 +36,7 @@ class File {
     }
 };
 
-int main() {
+int main3() {
     string tweet;
     File* file = new File("tweet.txt");
     tweet = file->readfile();

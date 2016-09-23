@@ -1,0 +1,27 @@
+https://www.atlassian.com/git/tutorials/syncing+
+
+if you see {} you have to put in a value WITHOUT the {}
+
+--------To update files for everyonelse--------
+git add -A
+git commit -m "your message"
+git push
+    {github username}
+    {github password}
+    
+    
+--------To get the latest files for yourself--------
+git pull ***Do this before you push
+
+--------Check to see what is going on--------
+git status
+
+--------Remove a file from the repository--------
+git rm {filename.extension}
+
+--------Final Thought--------
+If two people are working on the same file and both commit the same file both versions will be saved
+however they wont merge together into the samefile. So cordiante what you are working on.
+
+--------README Styling Info--------
+http://assemble.io/docs/Cheatsheet-Markdown.html

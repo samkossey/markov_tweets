@@ -38,6 +38,10 @@ map<string, list<Freq> > createMap(list<string> aList){
                 else{
                     f.frequency++;
                 }
+                Freq total;
+                total.word = ".";
+                total.frequency += f.frequency;
+                listOfF.push_back(total);
                 listOfF.push_back(f);
                 myMap.insert(std::pair<string, list<Freq> > (prevString, listOfF));
                 if (length == 0 || currString.at(length - 1) < 65 || (currString.at(length - 1) > 90 &&
@@ -56,6 +60,7 @@ map<string, list<Freq> > createMap(list<string> aList){
                     if (i->word == currString){
                         i->frequency = i->frequency + 1;
                         doesExist = true;
+                        myMap.at(prevString).begin()->frequency++;
                         break;
                     }
                 }
@@ -63,6 +68,7 @@ map<string, list<Freq> > createMap(list<string> aList){
                     Freq fr;
                     fr.word = currString;
                     fr.frequency = 1;
+                    myMap.at(prevString).begin()->frequency++;
                     myMap.at(prevString).push_back(fr);
                 }
                 if (currString.at(length - 1) < 65 || (currString.at(length - 1) > 90 &&
@@ -80,7 +86,7 @@ map<string, list<Freq> > createMap(list<string> aList){
         return myMap;
 }
 
-int main() {
+int main2() {
     string teststring = "I am alive to go to the store. I am me. I wish I could go to the store.";
     list<string> testlist = parseText(teststring);
     for (list<string>::iterator i = testlist.begin(); i != testlist.end(); i++){
