@@ -57,7 +57,7 @@ map<string, list<Freq> > createMap(list<string> aList){
             else if (myMap.count(prevString) > 0){
                 bool doesExist = false;
                 for (list<Freq>::iterator i = myMap.at(prevString).begin(); i != myMap.at(prevString).end(); i++){
-                    if (i->word == currString){
+                    if (i->word == currString && currString != ""){
                         i->frequency = i->frequency + 1;
                         doesExist = true;
                         myMap.at(prevString).begin()->frequency++;
@@ -87,7 +87,7 @@ map<string, list<Freq> > createMap(list<string> aList){
 }
 
 int main2() {
-    string teststring = "I am alive to go to the store. I am me. I wish I could go to the store.";
+    string teststring = "I am alive to go to the store.  I am me. I wish I could go to the store.";
     list<string> testlist = parseText(teststring);
     for (list<string>::iterator i = testlist.begin(); i != testlist.end(); i++){
         cout << *i << endl;

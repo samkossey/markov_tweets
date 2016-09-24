@@ -24,7 +24,7 @@ string generateTweet(map<string, list<Freq> > theMap){
             if (freqSoFar >= randVal){
                 if ((i->word.length() + length + 1) < 145){
                     int iLength = i->word.length();
-                    cout << "i->word " << i->word << endl; 
+                    
                     if (i->word.at(iLength - 1) < 65 || (i->word.at(iLength - 1) > 90 &&
                 i->word.at(iLength - 1) < 97) || i->word.at(iLength - 1) > 122){
                     tempWord = "";
@@ -48,6 +48,7 @@ string generateTweet(map<string, list<Freq> > theMap){
 
         for (i; i != theMap.at(tempWord).end(); i++){
             freqSoFar += i->frequency;
+            cout << "rand val " << randVal << endl;
             if (freqSoFar >= randVal){
                 if ((i->word.length() + length + 1) < 145){
                     int iLength = i->word.length();
