@@ -71,8 +71,8 @@ map<string, list<Freq> > createMap(list<string> aList){
                     myMap.at(prevString).begin()->frequency++;
                     myMap.at(prevString).push_back(fr);
                 }
-                if (currString.at(length - 1) < 65 || (currString.at(length - 1) > 90 &&
-                currString.at(length - 1) < 97) || currString.at(length - 1) > 122){
+                if (length > 0 && (currString.at(length - 1) < 65 || (currString.at(length - 1) > 90 &&  //out of range error thrown here: basic_string::at: __n (which is 18446744073709551615) >= this->size() (which is 0)
+                currString.at(length - 1) < 97) || currString.at(length - 1) > 122)){
                     prevString = "";
                     currString = "";
                 }
