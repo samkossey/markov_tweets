@@ -25,9 +25,9 @@ class File {
         while (getline(inFile, line))
         {
             text+=line;
-            if (!(line.back() == '.' || line.back() == '!' || line.back() == '?')){
-                text+=".";
-            }
+            // if (!(line.back() == '.' || line.back() == '!' || line.back() == '?' || line.back() == ';')){
+            //     text+=".";
+            // }
             text+=" ";
         }
         text.pop_back(); //take of the trailing space
