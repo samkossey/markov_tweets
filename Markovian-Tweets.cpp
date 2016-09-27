@@ -4,7 +4,7 @@
 #include <ctime>
 #include <cstdlib>
 
-#define FILE "const.txt"
+#define FILE "Const.txt"
 #define DEBUG false
 
 //given a map of words and the frequencies of their successors, generates
@@ -43,7 +43,7 @@ string generateTweet(map<string, list<Freq> > theMap){
                 //saves the length that word added to the tweet's total length
                 int iLength = i->word.length();
                 
-                if (i->word.at(iLength - 1) < 65 || (i->word.at(iLength - 1) > 90 &&
+                if (iLength == 0 || i->word.at(iLength - 1) < 65 || (i->word.at(iLength - 1) > 90 &&
             i->word.at(iLength - 1) < 97) || i->word.at(iLength - 1) > 122){
                 //if the word ends in a punctuation mark, the key associated is
                 //""
