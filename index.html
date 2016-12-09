@@ -41,7 +41,7 @@ I<!DOCTYPE html>
 <p>The program stores the probabilities of how likely a word is to appear after a given word based on the given text. The more
           often a word succeeds a given word in the input file, the more likely it is to be added to a tweet after the given word. 
           In this way, the program honors the word orderings that were used in the input file. The next word in the 
-          tweet is dependent only on the current word. Longer text files produces the most realistic tweets based on writing 
+          tweet is dependent only on the previous two words, as a second order markov chain. Longer text files produces the most realistic tweets based on writing 
           style because the program has more data to work from.</p>
 
 <h3>
